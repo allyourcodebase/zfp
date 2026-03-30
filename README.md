@@ -44,4 +44,4 @@ pub fn build(b: *std.Build) !void {
 }
 ```
 # Requirements
-The target version of Zig is ```0.14```. It may work with earlier versions, but has not been tested.
+The target version of Zig is ```0.15.2```. It may work with earlier versions, but has not been tested.
