@@ -13,7 +13,7 @@ pub fn build(b: *std.Build) void {
             .optimize = optimize,
             .pic = true,
             .link_libc = true,
-            .sanitize_c = false,
+            .sanitize_c = .off,
         }),
     });
 
