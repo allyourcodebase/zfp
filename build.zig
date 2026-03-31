@@ -4,10 +4,15 @@ pub fn build(b: *std.Build) void {
     const upstream = b.dependency("zfp", .{});
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
+    const linkage = b.option(
+        std.builtin.LinkMode,
+        "linkage",
+        "Library linkage (default: static)",
+    ) orelse .static;
 
     const lib = b.addLibrary(.{
         .name = "zfp",
-        .linkage = .static,
+        .linkage = linkage,
         .root_module = b.createModule(.{
             .target = target,
             .optimize = optimize,
